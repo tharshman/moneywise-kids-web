@@ -4,7 +4,7 @@ interface CourseCardProps {
   title: string;
   description: string;
   progress: number;
-  icon?: string;
+  icon: string;
 }
 
 export default function CourseCard({
@@ -19,8 +19,8 @@ export default function CourseCard({
         <Image
           src={icon}
           alt={title}
-          width={width}
-          height={height}
+          width={200}
+          height={200}
         />
       </figure>
       <div className="card-body">
