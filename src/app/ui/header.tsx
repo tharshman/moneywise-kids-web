@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="navbar bg-secondary">
+    <header className="navbar bg-secondary mb-4">
       <div className="navbar-start">
         <svg
           xmlns="http://www.w3.org/2000/svg"
