@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
   return (
     <header className="navbar bg-secondary">
-      <div className="flex-1">
+      <div className="navbar-start">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -19,9 +20,30 @@ export default function Header() {
           />
         </svg>
 
-        <a className="btn btn-ghost text-xl">MoneyWise Kids</a>
+        <Link className="btn btn-ghost text-xl" key="Home" href="/">MoneyWise Kids</Link>
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <Link href="/dashboard" key="Dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <details>
+              <summary>Course Catalog</summary>
+              <ul className="p-2">
+                <li>
+                  <a>Banking</a>
+                </li>
+                <li>
+                  <a>Stock Market</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a>Partners</a>
+          </li>
+        </ul>
       </div>
-      <div className="flex-none">
+      <div className="navbar-end">
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
@@ -42,13 +64,13 @@ export default function Header() {
             className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
           >
             <li>
-              <a className="justify-between">
+              <Link className="justify-between" key="Profile" href="/user/profile">
                 Profile
                 <span className="badge">New</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a>Settings</a>
+              <Link href="/user/">Settings</Link>
             </li>
             <li>
               <a>Logout</a>
