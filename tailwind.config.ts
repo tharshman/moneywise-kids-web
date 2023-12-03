@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss';
 import daisyui from 'daisyui';
+import typography from '@tailwindcss/typography';
 
 const config: Config = {
   content: [
@@ -16,17 +17,17 @@ const config: Config = {
       },
     },
   },
-  plugins: [daisyui],
+  plugins: [daisyui, typography],
   daisyui: {
     themes: [
       {
         moneywisekids: {
-          primary: '#676f9d',
-          secondary: '#d7ac82',
-          accent: '#93a9c7',
-          neutral: '#3d4451',
+          'primary': '#676f9d',
+          'secondary': '#d7ac82',
+          'accent': '#93a9c7',
+          'neutral': '#3d4451',
           'base-100': '#f3e5d8',
-          info: '#93a9c7',
+          'info': '#93a9c7',
         },
       },
       'dark',
