@@ -1,7 +1,10 @@
-import Achievement from '../ui/dashboard/achievement';
+import { getCourses } from '@/app/lib/actions';
+import Achievement from '@/app/ui/dashboard/achievement';
 import { AchievementType } from '@/app/lib/definitions';
+import CourseCard from '../ui/dashboard/course-card';
 
-export default function Page() {
+export default async function Page() {
+  const courses = await getCourses();
   return (
     <main>
       <h1 className="text-mw-brown mb-4 text-xl font-bold md:text-2xl ml-2">
@@ -19,7 +22,19 @@ export default function Page() {
       <div className="divider"></div>
       <div className="ml-4 mr-4">
         <h2 className="text-mw-brown mb-2 text-xl font-bold">Active courses</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-6">
+          {courses.map((course) => (
+            <CourseCard
+              key={course.id}
+              id={course.id}
+              title={course.name}
+              description={course.description}
+              progress={100}
+              icon={course.image}
+              isActive={true}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );
