@@ -1,7 +1,7 @@
 import { getUserCourseList, getUserByEmail } from '@/app/lib/actions';
 import Achievement from '@/app/ui/achievement';
 import { AchievementType } from '@/app/lib/definitions';
-import CourseCard from '../ui/course-card';
+import CourseCard from '@/app/ui/course-card';
 
 export default async function Page() {
   const user = await getUserByEmail('vbortone@gmail.com');
