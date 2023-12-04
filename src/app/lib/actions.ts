@@ -1,7 +1,6 @@
 'use server';
 
-import { Course, UserCourse, User, Question, Answer } from '@/app/lib/definitions';
-import { use } from 'react';
+import { Course, UserCourse, User, Question, Partner, PartnerType } from '@/app/lib/definitions';
 
 export async function getCourses(): Promise<Course[]> {
   return new Promise<Course[]>((resolve) => {
@@ -220,6 +219,56 @@ export async function getQuestionsForCourse(courseId: string): Promise<Question[
             isCorrect: true,
           },
         ]
+      },
+    ]);
+  });
+}
+
+export async function getPartners(): Promise<Partner[]> {
+  // return list of banking, credit card, and investment partners
+  // for the logos, give me real logos from the partner's websites
+
+  return new Promise<Partner[]>((resolve) => {
+    resolve([
+      {
+        partnerId: '91ab0f34-01de-495a-9e8e-75458627b887',
+        name: 'Bank of America',
+        description: 'Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered in Charlotte, North Carolina.',
+        url: 'https://www.bankofamerica.com/',
+        logo: '/partners/boa.svg',
+        partnerType: PartnerType.Bank,
+      },
+      {
+        partnerId: '591bd232-c351-4f95-bbd6-54ce227f1701',
+        name: 'Chase',
+        description: 'JPMorgan Chase & Co. is an American multinational investment bank and financial services holding company headquartered in New York City.',
+        url: 'https://www.chase.com/',
+        logo: '/partners/chase.svg',
+        partnerType: PartnerType.Bank,
+      },
+      {
+        partnerId: '52647c25-f01c-4e0a-ab32-fd00acd8fad0',
+        name: 'Wells Fargo',
+        description: 'Wells Fargo & Company is an American multinational financial services company with corporate headquarters in San Francisco, California, operational headquarters in Manhattan, and managerial offices throughout the United States and overseas.',
+        url: 'https://www.wellsfargo.com/',
+        logo: '/partners/wf.webp',
+        partnerType: PartnerType.Bank,
+      },
+      {
+        partnerId: '329679b3-1295-4bbc-adc9-9c1c524ea249',
+        name: 'Capital One',
+        description: 'Capital One Financial Corporation is an American bank holding company specializing in credit cards, auto loans, banking, and savings accounts, headquartered in McLean, Virginia with operations primarily in the United States.',
+        url: 'https://www.capitalone.com/',
+        logo: '/partners/capone.svg',
+        partnerType: PartnerType.CreditCard,
+      },
+      {
+        partnerId: 'f1530125-1ed6-4d91-b594-c485f2c6ef0e',
+        name: 'American Express',
+        description: 'The American Express Company, also known as Amex, is an American multinational financial services corporation headquartered at 200 Vesey Street in New York City.',
+        url: 'https://www.americanexpress.com/',
+        logo: '/partners/amex.svg',
+        partnerType: PartnerType.CreditCard,
       },
     ]);
   });
