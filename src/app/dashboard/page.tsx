@@ -1,10 +1,12 @@
-import { getUserCourses } from '@/app/lib/actions';
-import Achievement from '@/app/ui/dashboard/achievement';
+import { getUserCourseList, getUserByEmail } from '@/app/lib/actions';
+import Achievement from '@/app/ui/achievement';
 import { AchievementType } from '@/app/lib/definitions';
-import CourseCard from '../ui/dashboard/course-card';
+import CourseCard from '../ui/course-card';
 
 export default async function Page() {
-  const userCourses = await getUserCourses(1);
+  const user = await getUserByEmail('vbortone@gmail.com');
+  const userCourses = await getUserCourseList(user.userId);
+
   return (
     <main>
       <h1 className="text-mw-brown mb-4 ml-2 text-xl font-bold md:text-2xl">
@@ -37,8 +39,8 @@ export default async function Page() {
         <div className="mb-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {userCourses.map((course) => (
             <CourseCard
-              key={course.id}
-              id={course.id}
+              key={course.courseId}
+              courseId={course.courseId}
               title={course.name}
               description={course.description}
               progress={course.progress}
