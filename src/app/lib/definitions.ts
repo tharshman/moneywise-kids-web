@@ -16,10 +16,26 @@ export interface Course {
   name: string;
   description: string;
   image: string;
+  video: string;
 }
 
 export interface UserCourse extends Course {
   userCourseId: string;
   userId: string;
   progress: number;
+}
+
+export interface Question {
+  questionId: string;
+  courseId: string;
+  question: string;
+  answers: Answer[];
+}
+
+export interface Answer {
+  answerId: string;
+  questionId: string;
+  sortOrder: number;
+  text: string;
+  isCorrect: boolean;
 }
