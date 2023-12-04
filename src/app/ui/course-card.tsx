@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface CourseCardProps {
-  id: number;
+  courseId: string;
   title: string;
   description: string;
   progress: number;
@@ -15,7 +15,7 @@ interface ProgressBarProps {
 }
 
 interface CourseCardButtonProps {
-  courseId: number;
+  courseId: string;
   progress: number;
   isLocked: boolean;
 }
@@ -67,7 +67,7 @@ function CourseCardButton({
 }
 
 export default function CourseCard({
-  id,
+  courseId,
   title,
   description,
   progress,
@@ -83,7 +83,7 @@ export default function CourseCard({
         <h2 className="text-mw-brown card-title">{title}</h2>
         <p className="text-mw-brown prose">{description}</p>
         {isActive && ProgressBar({ progress })}
-        <CourseCardButton courseId={id} progress={progress} isLocked={false} />
+        <CourseCardButton courseId={courseId} progress={progress} isLocked={false} />
       </div>
     </div>
   );
