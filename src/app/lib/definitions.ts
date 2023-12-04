@@ -4,9 +4,14 @@ export enum AchievementType {
   Misc = 3,
 }
 
-export type Course = {
+export interface Course {
   id: number;
   name: string;
   description: string;
   image: string;
-};
+}
+
+export interface UserCourse extends Course {
+  userId: number;
+  progress: number;
+}

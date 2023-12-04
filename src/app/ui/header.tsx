@@ -4,20 +4,26 @@ import MoneyWiseLogo from '@/app/ui/moneywise-logo';
 
 export default function Header() {
   return (
-    <header className="navbar bg-secondary my-4 py-4">
-      <div className="navbar-start">        
+    <header className="navbar my-4 bg-secondary py-4">
+      <div className="navbar-start">
         <Link className="btn btn-ghost text-xl" key="Home" href="/">
           <MoneyWiseLogo />
         </Link>
-        <ul className="menu menu-horizontal px-1 text-mw-brown font-extrabold">
+        <ul className="text-mw-brown menu menu-horizontal px-1 font-extrabold">
           <li>
-            <Link href="/dashboard" key="Dashboard">Dashboard</Link>
+            <Link href="/dashboard" key="Dashboard">
+              Dashboard
+            </Link>
           </li>
           <li>
-            <Link href="/catalog" key="Catalog">Courses</Link>
-          </li>          
+            <Link href="/catalog" key="Catalog">
+              Courses
+            </Link>
+          </li>
           <li>
-            <Link href="/partners" key="Partners">Partners</Link>            
+            <Link href="/partners" key="Partners">
+              Partners
+            </Link>
           </li>
         </ul>
       </div>
@@ -42,7 +48,11 @@ export default function Header() {
             className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
           >
             <li>
-              <Link className="justify-between" key="Profile" href="/user/profile">
+              <Link
+                className="justify-between"
+                key="Profile"
+                href="/user/profile"
+              >
                 Profile
                 <span className="badge">New</span>
               </Link>
