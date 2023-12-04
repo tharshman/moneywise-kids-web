@@ -17,7 +17,7 @@ interface ProgressBarProps {
 interface CourseCardButtonProps {
   courseId: string;
   progress: number;
-  isLocked: boolean;
+  isActive: boolean;
 }
 
 function ProgressBar({ progress }: ProgressBarProps) {
@@ -37,9 +37,9 @@ function ProgressBar({ progress }: ProgressBarProps) {
 function CourseCardButton({
   courseId,
   progress,
-  isLocked,
+  isActive,
 }: CourseCardButtonProps) {
-  if (isLocked) {
+  if (!isActive) {
     return (
       <Link className="btn btn-disabled" href="/">
         Locked
@@ -83,7 +83,7 @@ export default function CourseCard({
         <h2 className="text-mw-brown card-title">{title}</h2>
         <p className="text-mw-brown prose">{description}</p>
         {isActive && ProgressBar({ progress })}
-        <CourseCardButton courseId={courseId} progress={progress} isLocked={false} />
+        <CourseCardButton courseId={courseId} progress={progress} isActive={isActive} />
       </div>
     </div>
   );
