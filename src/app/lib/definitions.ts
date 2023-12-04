@@ -4,6 +4,13 @@ export enum AchievementType {
   Misc = 3,
 }
 
+export enum PartnerType {
+  Bank = 1,
+  CreditCard = 2,
+  Investment = 3,
+  Blockchain = 4,
+}
+
 export interface User {
   userId: string;
   firstName: string;
@@ -38,4 +45,13 @@ export interface Answer {
   sortOrder: number;
   text: string;
   isCorrect: boolean;
+}
+
+export interface Partner {
+  partnerId: string;
+  name: string;
+  description: string;
+  url: string;
+  logo: string;
+  partnerType: PartnerType;
 }
