@@ -1,5 +1,5 @@
-import { getUserCourseList, getUserById, getUserByEmail } from '@/app/lib/actions';
-import Achievement from '@/app/ui/dashboard/achievement';
+import { getUserCourseList, getUserByEmail } from '@/app/lib/actions';
+import Achievement from '@/app/ui/achievement';
 import { AchievementType } from '@/app/lib/definitions';
 import CourseCard from '../ui/course-card';
 
