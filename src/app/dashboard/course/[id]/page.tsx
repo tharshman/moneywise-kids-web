@@ -10,8 +10,6 @@ export default async function Page({ params }: { params: { id: string } }) {
   const userCourse = await getUserCourse(user.userId, params.id);
   const questions = await getQuestionsForCourse(params.id);
 
-  function scoreTest(e) {}
-
   return (
     <main className="ml-4">
       <section className="my-8">

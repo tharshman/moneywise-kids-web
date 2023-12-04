@@ -1,6 +1,7 @@
 'use server';
 
 import { Course, UserCourse, User, Question, Answer } from '@/app/lib/definitions';
+import { use } from 'react';
 
 export async function getCourses(): Promise<Course[]> {
   return new Promise<Course[]>((resolve) => {
@@ -83,7 +84,8 @@ export async function getUserCourse(
 export async function getUserCourseById(
   userCourseId: string,
 ): Promise<UserCourse> {
-  const userCourseList = await getUserCourseList(userId);
+  const user = await getUserByEmail('vbortone@gmail.com');
+  const userCourseList = await getUserCourseList(user.userId);
   const userCourse: UserCourse | undefined = userCourseList.find(
     (userCourse) => userCourse.userCourseId === userCourseId,
   );
