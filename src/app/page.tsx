@@ -17,9 +17,11 @@ export default function Home() {
                 Building Financial Brilliance, One Child at a Time
               </h1>
               <p className="mb-5">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+              Empowering young minds with essential financial literacy skills,
+              we nurture a generation equipped to make informed decisions and embrace
+              a future of stability and success. Through engaging lessons and hands-on
+              experiences, each child gains the confidence to master money management
+              early on—setting the foundation for lifelong financial brilliance.
               </p>
               <button className="btn btn-primary">Get Started</button>
             </div>
